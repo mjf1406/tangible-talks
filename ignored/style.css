@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    color-scheme: light dark;
+    scroll-behavior: auto;
+}
+body {
+    font-family: "quicksand", sans-serif;
+}
+@media (min-width: 768px) { /* Adjust breakpoint as needed */
+    html {
+      scroll-behavior: smooth;
+    }
+}
+.sidebar-icon {
+    @apply text-cyan-300 rounded-full text-2xl hover:text-black hover:rounded-xl dark:bg-gray-700 w-14 h-14 flex flex-row justify-center items-center hover:bg-green-500 transition-all duration-300 ease-linear cursor-pointer overflow-hidden shrink-0
+}
+.sidebar-hr {
+    @apply bg-gray-200 dark:bg-gray-600 border border-gray-200 dark:border-gray-600 rounded-full mx-2 w-14
+}
+.sidebar-tooltip {
+    @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
+    text-white bg-gray-900 
+    text-xs font-bold 
+    transition-all duration-100 scale-0 origin-left;
+}
+.toast {
+    @apply z-10;
+}
+@media (prefers-color-scheme: dark) {
+    dialog::backdrop {
+        background-color: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(2px);
+    }  
+}
+@media (prefers-color-scheme: light) {
+    dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(2px);
+    }  
+}
